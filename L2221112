@@ -304,6 +304,11 @@ end
 
 
 local GetClosestPlayerAndRender = function()
+        if TargetCharacter and Locked then
+        -- If already locked onto a target, keep it locked
+        return TargetCharacter
+    end
+    
     MouseVector = Vector2new(Mouse.X, Mouse.Y + Inset);
     local Closest = create(4);
     local Vector2Distance = math.huge
