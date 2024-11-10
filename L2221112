@@ -166,6 +166,8 @@ local LocalPlayer = Players.LocalPlayer
 local Mouse = LocalPlayer:GetMouse();
 local MouseVector = Vector2new(Mouse.X, Mouse.Y);
 local Characters = {}
+local Locked = false
+local TargetCharacter = nil -- Added for target locking
 
 local CustomGet = {
     [0] = function()
