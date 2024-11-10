@@ -2,7 +2,7 @@ if (not game:IsLoaded()) then
     game.Loaded:Wait();
 end
 
-local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Oracle228/Lol1412412421412421414124214/refs/heads/main/L1112221"))();
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/PhantomXcd/Roblox-ESP/main/UI"))();
 
 local PlaceId = game.PlaceId
 
@@ -635,7 +635,7 @@ for Index, Function in pairs(HookedFunctions) do
 end
 
 local MainUI = UILibrary.new(Color3.fromRGB(255, 79, 87));
-local Window = MainUI:LoadWindow('                                                            PhantomXcds <font color="#ff4f57">Universal</font> ESP and Aimbot', UDim2.fromOffset(600, 500));
+local Window = MainUI:LoadWindow('                                                            099 Scripts <font color="#ff4f57">Universal</font> ESP and Aimbot', UDim2.fromOffset(600, 500));
 local ESP = Window.NewPage("Esp");
 local Aimbot = Window.NewPage("Aimbot");
 local EspSettingsUI = ESP.NewSection("Esp");
@@ -739,21 +739,6 @@ end);
 Aimbot.Slider("Aimbot Smoothness", {Min = 1, Max = 10, Default = AimbotSettings.Smoothness, Step = .5}, function(Callback)
     AimbotSettings.Smoothness = Callback
 end);
-
--- Значение для Prediction
-local predictionValue = 0.00 -- Начальное значение предикшена
-
--- Ползунок для изменения Prediction
-Aimbot.Slider("Prediction", {
-    Min = 0.00,
-    Max = 2.00,
-    Default = 0.00,
-    Step = 0.01
-}, function(value)
-    predictionValue = value
-    print("Prediction value updated:", value) -- Вывод значения для отладки
-end)
-
 local sortTeams = function(Callback)
     table.clear(AimbotSettings.BlacklistedTeams);
     if (Callback == "Enemies") then
