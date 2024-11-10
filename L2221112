@@ -74,6 +74,7 @@ local DefaultSettings = {
         FovSize = 150,
         FovColor = Color3new(1, 1, 1),
         Aimlock = "Head",
+        Prediction = 0.00, -- New prediction setting
         SilentAimRedirect = "Head",
         BlacklistedTeams = {}
     },
