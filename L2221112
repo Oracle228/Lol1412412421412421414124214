@@ -635,7 +635,7 @@ for Index, Function in pairs(HookedFunctions) do
 end
 
 local MainUI = UILibrary.new(Color3.fromRGB(255, 79, 87));
-local Window = MainUI:LoadWindow('                                                            PhantomXcds <font color="#ff4f57">Universal</font> ESP and Aimbot', UDim2.fromOffset(600, 500));
+local Window = MainUI:LoadWindow('                                                            099-Scripts <font color="#ff4f57">Universal</font> ESP and Aimbot', UDim2.fromOffset(600, 500));
 local ESP = Window.NewPage("Esp");
 local Aimbot = Window.NewPage("Aimbot");
 local EspSettingsUI = ESP.NewSection("Esp");
