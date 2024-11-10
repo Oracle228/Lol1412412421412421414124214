@@ -648,6 +648,8 @@ for Index, Function in pairs(HookedFunctions) do
 end
 
 local MainUI = UILibrary.new(Color3.fromRGB(255, 79, 87));
+local AimbotPage = MainUI:LoadWindow('Aimbot UI')
+local AimbotSettingsUI = AimbotPage.NewPage("Aimbot Settings")
 local Window = MainUI:LoadWindow('                                                            099-Scripts <font color="#ff4f57">Universal</font> ESP and Aimbot', UDim2.fromOffset(600, 500));
 local ESP = Window.NewPage("Esp");
 local Aimbot = Window.NewPage("Aimbot");
@@ -800,7 +802,15 @@ else
     if (protect_gui) then
         protect_gui(MainUI.UI);
     end
-    MainUI.UI.Parent = game:GetService("CoreGui");
+AimbotSettingsUI.Toggle("Aimbot", Settings.Aimbot.Enabled, function(Callback)
+    Settings.Aimbot.Enabled = Callback
+end)
+
+AimbotSettingsUI.Slider("Prediction", {Min = 0.00, Max = 2.00, Default = Settings.Aimbot.Prediction, Step = 0.01}, function(Callback)
+    Settings.Aimbot.Prediction = Callback
+end)
+
+MainUI.UI.Parent = game:GetService("CoreGui")
 end
 
 while wait(5) do
