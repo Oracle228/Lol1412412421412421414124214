@@ -479,6 +479,7 @@ local Locked, SwitchedCamera = false, false
 UserInputService.InputBegan:Connect(function(Inp)
     if (AimbotSettings.Enabled and Inp.UserInputType == Enum.UserInputType.MouseButton2) then
         Locked = true
+        TargetCharacter = GetClosestPlayerAndRender() -- Lock onto initial target
         if (AimbotSettings.FirstPerson and LocalPlayer.CameraMode ~= Enum.CameraMode.LockFirstPerson) then
             LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
             SwitchedCamera = true
@@ -488,6 +489,7 @@ end);
 UserInputService.InputEnded:Connect(function(Inp)
     if (AimbotSettings.Enabled and Inp.UserInputType == Enum.UserInputType.MouseButton2) then
         Locked = false
+        TargetCharacter = nil -- Release lock on target
         if (SwitchedCamera) then
             LocalPlayer.CameraMode = Enum.CameraMode.Classic
         end
