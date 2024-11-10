@@ -500,6 +500,9 @@ local ClosestCharacter, Vector, Player, Aimlock;
 RunService.RenderStepped:Connect(function()
     ClosestCharacter, Vector, Player, Aimlock = GetClosestPlayerAndRender();
     if (Locked and AimbotSettings.Enabled and ClosestCharacter) then
+                local Redirect = FindFirstChild(TargetCharacter, Settings.Aimbot.Aimlock)
+        if Redirect then
+            local TargetPosition = Redirect.Position + (Redirect.CFrame.LookVector * Settings.Aimbot.Prediction)
         if (AimbotSettings.FirstPerson) then
             if (syn) then
                 CurrentCamera.CoordinateFrame = CFramenew(CurrentCamera.CoordinateFrame.p, Aimlock.Position);
